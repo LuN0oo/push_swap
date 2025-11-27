@@ -6,7 +6,7 @@
 /*   By: analaphi <analaphi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 13:25:53 by analaphi          #+#    #+#             */
-/*   Updated: 2025/11/27 17:09:13 by analaphi         ###   ########.fr       */
+/*   Updated: 2025/11/27 18:07:07 by analaphi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,14 @@ int		ft_lstsize(t_stack *lst);
 void	ft_lst_addback(t_stack **s, t_stack *new);
 t_stack	*ft_add_new(int elem);
 int		ft_find_index(t_stack *s, int elem);
+void	ft_free_stack(t_stack **s);
 
 /*-------------------Other_Utils-------------------*/
 
 int		ft_atoi(const char *str);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	ft_error(void);
+int		ft_strlen(const char *str);
+char	**ft_split(const char *str, char c);
 
 #endif
