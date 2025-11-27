@@ -6,35 +6,36 @@
 /*   By: analaphi <analaphi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 15:18:38 by analaphi          #+#    #+#             */
-/*   Updated: 2025/11/25 09:55:59 by analaphi         ###   ########.fr       */
+/*   Updated: 2025/11/27 14:46:22 by analaphi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pa(t_stack *a, t_stack *b)
+void	pa(t_stack **a, t_stack **b, int flag)
 {
-	if (!b)
-		return ;
-	push(a, pop(b));
-	write(1, "pa\n", 3);
+	t_stack	*tmp;
+
+	if (!*b)
+		return (NULL);
+	tmp = *a;
+	*a = *b;
+	*b = (*b)->next;
+	(*a)->next = tmp;
+	if (flag == 1)
+		write(1, "pa\n", 3);
 }
 
-void	pb(t_stack *b, t_stack *a)
+void	pb(t_stack **a, t_stack **b, int flag)
 {
-	if (!a)
-		return ;
-	push(b, pop(b));
-	write(1, "pb\n", 3);
-}
+	t_stack	*tmp;
 
-// void pp(t_stack *pushed, t_stack *taken, int flag)
-// {
-// 	if (!taken)
-// 		return ;
-// 	push(pushed, pop(taken));
-// 	if (flag == 1)
-// 		write(1, "pa\n", 3);
-// 	else if (flag == 2)
-// 		write(1, "pb\n", 3);
-// }
+	if (!*a)
+		return (NULL);
+	tmp = *b;
+	*b = *a;
+	*a = (*a)->next;
+	(*b)->next = tmp;
+	if (flag == 1)
+		write(1, "pb\n", 3);
+}

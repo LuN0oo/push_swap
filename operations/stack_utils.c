@@ -6,7 +6,7 @@
 /*   By: analaphi <analaphi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 15:19:15 by analaphi          #+#    #+#             */
-/*   Updated: 2025/11/24 13:22:54 by analaphi         ###   ########.fr       */
+/*   Updated: 2025/11/27 15:40:33 by analaphi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,33 +18,17 @@ t_stack	*create_stack(int size)
 
 	if (size <= 0)
 		return (NULL);
-	s = malloc(sizeof(t_stack));
+	s = malloc(sizeof(t_stack) * size);
 	if (!s)
 		return (NULL);
-	s->values = malloc (sizeof(int) * size);
-	if (!s->values)
+	s->value = malloc(sizeof(int));
+	if (!s->value)
 	{
 		free (s);
 		return (NULL);
 	}
 	s->size = 0;
 	return (s);
-}
-
-int	pop(t_stack *s)
-{
-	int	popped;
-
-	popped = s->values[s->size - 1];
-	s->size--;
-	return (popped);
-}
-
-int	push(t_stack *s, int elem)
-{
-	s->values[s->size] = elem;
-	s->size++;
-	return (1);
 }
 
 int	is_empty(t_stack *s)

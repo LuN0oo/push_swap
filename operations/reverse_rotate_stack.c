@@ -6,49 +6,66 @@
 /*   By: analaphi <analaphi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 09:44:58 by analaphi          #+#    #+#             */
-/*   Updated: 2025/11/25 09:56:43 by analaphi         ###   ########.fr       */
+/*   Updated: 2025/11/27 14:48:27 by analaphi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rra(t_stack *s, int flag)
+void	rra(t_stack **a, int flag)
 {
-	int	bot;
+	t_stack	*tmp;
+	int		i;
 
-	bot = s->values[0];
-	ft_memmove(&s->values[0], &s->values[1], (s->size - 1) * sizeof(int));
-	s->values[s->size - 1] = bot;
+	if (!(*a) || !(*a)->next)
+		return (NULL);
+	tmp = *a;
+	i = 0;
+	while ((*a)->next)
+	{
+		(*a)->next;
+		i++;
+	}
+	(*a)->next = tmp;
+	while (i > 1)
+	{
+		tmp = tmp->next;
+		i--;
+	}
+	tmp->next = NULL;
 	if (flag == 1)
 		write(1, "rra\n", 4);
 }
 
-void	rrb(t_stack *s, int flag)
+void	rrb(t_stack **b, int flag)
 {
-	int	bot;
+	t_stack	*tmp;
+	int		i;
 
-	bot = s->values[0];
-	ft_memmove(&s->values[0], &s->values[1], (s->size - 1) * sizeof(int));
-	s->values[s->size - 1] = bot;
+	if (!(*b) || !(*b)->next)
+		return (NULL);
+	tmp = *b;
+	i = 0;
+	while ((*b)->next)
+	{
+		tmp = (*b)->next;
+		i++;
+	}
+	(*b)->next = tmp;
+	while (i > 1)
+	{
+		tmp = tmp->next;
+		i--;
+	}
+	tmp->next = NULL;
 	if (flag == 1)
 		write(1, "rrb\n", 4);
 }
 
-// void	rrs(t_stack *s, int flag)
-// {
-// 	int	bot;
-
-// 	bot = s->values[0];
-// 	ft_memmove(&s->values[0], &s->values[1], (s->size - 1) * sizeof(int));
-// 	s->values[s->size - 1] = bot;
-// 	if (flag == 1)
-// 		write(1, "rra\n", 4);
-// 	if (flag == 2)
-// 		write(1, "rrb\n", 4);
-// }
-
-void	rrr(t_stack *a, t_stack *b)
+void	rrr(t_stack **a, t_stack **b)
 {
+	if (!*a || !(*a)->next || !*b || !(*b)->next)
+		return (NULL);
 	rra(a, 0);
 	rrb(b, 0);
 	write(1, "rrr\n", 4);

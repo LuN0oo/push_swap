@@ -6,61 +6,45 @@
 /*   By: analaphi <analaphi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 10:55:08 by analaphi          #+#    #+#             */
-/*   Updated: 2025/11/25 10:07:23 by analaphi         ###   ########.fr       */
+/*   Updated: 2025/11/27 14:45:55 by analaphi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa(t_stack *s, int flag)
+void	sa(t_stack **a, int flag)
 {
-	int	tmp1;
-	int	tmp2;
+	t_stack	*tmp;
 
-	if (s->size <= 1)
-		return ;
-	tmp1 = pop(s);
-	tmp2 = pop(s);
-	push(s, tmp1);
-	push(s, tmp2);
+	if (!*a || !((*a)->next))
+		return (NULL);
+	tmp = *a;
+	*a = (*a)->next;
+	tmp->next = (*a)->next;
+	(*a)->next = tmp;
 	if (flag == 1)
 		write(1, "sa\n", 3);
 }
 
-void	sb(t_stack *s, int flag)
+void	sb(t_stack **b, int flag)
 {
-	int	tmp1;
-	int	tmp2;
+	t_stack	*tmp;
 
-	if (s->size <= 1)
-		return ;
-	tmp1 = pop(s);
-	tmp2 = pop(s);
-	push(s, tmp1);
-	push(s, tmp2);
+	if (!*b || !((*b)->next))
+		return (NULL);
+	tmp = *b;
+	*b = (*b)->next;
+	tmp->next = (*b)->next;
+	(*b)->next = tmp;
 	if (flag == 1)
 		write(1, "sb\n", 3);
 }
 
-void	ss(t_stack *a, t_stack *b)
+void	ss(t_stack **a, t_stack **b)
 {
+	if (!*a || !(*a)->next || !*b || !(*b)->next)
+		return (NULL);
 	sa(a, 0);
 	sb(b, 0);
 	write(1, "ss\n", 3);
 }
-// void	s(t_stack *s, int flag)
-// {
-// 	int	tmp1;
-// 	int	tmp2;
-
-// 	if (s->size <= 1)
-// 		return ;
-// 	tmp1 = pop(s);
-// 	tmp2 = pop(s);
-// 	push(s, tmp1);
-// 	push(s, tmp2);
-// 	if (flag == 1)
-// 		write(1, "sa\n", 3);
-// 	else if (flag = 2)
-// 		write(1, "sb\n", 3);
-// }

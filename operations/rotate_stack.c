@@ -6,48 +6,46 @@
 /*   By: analaphi <analaphi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 09:33:04 by analaphi          #+#    #+#             */
-/*   Updated: 2025/11/25 09:56:27 by analaphi         ###   ########.fr       */
+/*   Updated: 2025/11/27 15:36:01 by analaphi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ra(t_stack *s, int flag)
+void	ra(t_stack **a, int flag)
 {
-	int	top;
+	t_stack	*tmp;
 
-	top = s->values[s->size - 1];
-	ft_memmove(&s->values[1], &s->values[0], (s->size - 1) * sizeof(int));
-	s->values[0] = top;
+	if (!*a || !(*a)->next)
+		return (NULL);
+	tmp = *a;
+	*a = ft_lstlast(*a);
+	(*a)->next = tmp;
+	*a = tmp->next;
+	tmp->next = NULL;
 	if (flag == 1)
 		write(1, "ra\n", 3);
 }
 
-void	rb(t_stack *s, int flag)
+void	rb(t_stack **b, int flag)
 {
-	int	top;
+	t_stack	*tmp;
 
-	top = s->values[s->size - 1];
-	ft_memmove(&s->values[1], &s->values[0], (s->size - 1) * sizeof(int));
-	s->values[0] = top;
+	if (!*b || !(*b)->next)
+		return (NULL);
+	tmp = *b;
+	*b = ft_lstlast(*b);
+	(*b)->next = tmp;
+	*b = tmp->next;
+	tmp->next = NULL;
 	if (flag == 1)
-		write(1, "rb\n", 3);
+		write(1, "ra\n", 3);
 }
 
-// void rs(t_stack *s, int flag)
-// {
-// 	int	top = s->values[s->size - 1];
-//
-// 	ft_memmove(&s->values[1], &s->values[0], (s->size - 1) * sizeof(int));
-// 	s->values[0] = top;
-// 	if (flag == 1)
-// 		write(1, "ra\n", 3);
-// 	if (flag == 2)
-// 		write(1, "rb\n", 3);
-// }
-
-void	rr(t_stack *a, t_stack *b)
+void	rr(t_stack **a, t_stack **b)
 {
+	if (!*a || (*a)->next || !*b || !(*b)->next)
+		return (NULL);
 	ra(a, 0);
 	rb(b, 0);
 	write(1, "rr\n", 3);
