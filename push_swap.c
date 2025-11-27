@@ -6,13 +6,7 @@
 /*   By: analaphi <analaphi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 13:25:21 by analaphi          #+#    #+#             */
-/*   Updated: 2025/11/25 09:49:27 by analaphi         ###   ########.fr       */
+/*   Updated: 2025/11/27 17:00:31 by analaphi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-int main(int ac, char **av)
-{
-
-}
