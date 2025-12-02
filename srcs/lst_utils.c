@@ -6,17 +6,17 @@
 /*   By: analaphi <analaphi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 11:42:37 by analaphi          #+#    #+#             */
-/*   Updated: 2025/11/27 17:08:48 by analaphi         ###   ########.fr       */
+/*   Updated: 2025/12/02 16:20:07 by analaphi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 t_stack	*ft_lstlast(t_stack *lst)
 {
 	if (!lst)
 		return (NULL);
-	while (lst->next)
+	while (lst)
 		lst = lst->next;
 	return (lst);
 }
@@ -26,9 +26,7 @@ int	ft_lstsize(t_stack *lst)
 	size_t	i;
 
 	i = 0;
-	if (!lst)
-		return (NULL);
-	while (lst->next)
+	while (lst)
 	{
 		lst = lst->next;
 		i++;
@@ -44,7 +42,7 @@ void	ft_lst_addback(t_stack **s, t_stack *new)
 		return ;
 	if (*s == NULL)
 	{
-		*s == new;
+		*s = new;
 		return ;
 	}
 	tmp = ft_lstlast(*s);

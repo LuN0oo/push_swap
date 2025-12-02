@@ -6,31 +6,28 @@
 /*   By: analaphi <analaphi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 17:46:10 by analaphi          #+#    #+#             */
-/*   Updated: 2025/11/27 18:08:17 by analaphi         ###   ########.fr       */
+/*   Updated: 2025/12/02 12:16:59 by analaphi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
+#include <stdio.h>
 
-static int	ft_count_words(const char *str, char c)
+
+static int	ft_count_words(char const *str, char c)
 {
-	int	trigger;
 	int	i;
+	int	count;
 
 	i = 0;
-	trigger = 0;
-	while (*str)
+	count = 0;
+	while (str[i])
 	{
-		if (*str != c && trigger == 0)
-		{
-			trigger = 1;
-			i++;
-		}
-		else if (*str == c)
-			trigger = 0;
-		str++;
+		if ((str[i] != c) && (i == 0 || str[i - 1] == c))
+			count++;
+		i++;
 	}
-	return (i);
+	return (count);
 }
 
 static char	*word_dup(const char *str, int start, int finish)
@@ -53,7 +50,9 @@ char	**ft_split(const char *str, char c)
 	int		index;
 	char	**split;
 
-	split = malloc((ft_count_words(str, c) + 1) * sizeof(char *));
+	if (!str || !c)
+		printf("caca ici");
+	split = malloc(sizeof(char *) * (ft_count_words(str, c) + 1));
 	if (!str || !split)
 		return (NULL);
 	i = 0;

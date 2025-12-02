@@ -6,11 +6,11 @@
 /*   By: analaphi <analaphi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 15:18:10 by analaphi          #+#    #+#             */
-/*   Updated: 2025/11/25 15:18:21 by analaphi         ###   ########.fr       */
+/*   Updated: 2025/11/28 15:31:39 by analaphi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {

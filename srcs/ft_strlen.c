@@ -6,9 +6,11 @@
 /*   By: analaphi <analaphi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 17:58:20 by analaphi          #+#    #+#             */
-/*   Updated: 2025/11/27 18:08:35 by analaphi         ###   ########.fr       */
+/*   Updated: 2025/11/28 15:31:51 by analaphi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../push_swap.h"
 
 int	ft_strlen(const char *str)
 {

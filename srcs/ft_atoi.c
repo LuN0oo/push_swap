@@ -6,11 +6,11 @@
 /*   By: analaphi <analaphi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 13:23:26 by analaphi          #+#    #+#             */
-/*   Updated: 2025/11/25 15:19:02 by analaphi         ###   ########.fr       */
+/*   Updated: 2025/11/28 15:30:42 by analaphi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	ft_atoi(const char *str)
 {

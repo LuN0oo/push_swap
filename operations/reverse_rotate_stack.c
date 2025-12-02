@@ -6,11 +6,11 @@
 /*   By: analaphi <analaphi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 09:44:58 by analaphi          #+#    #+#             */
-/*   Updated: 2025/11/27 14:48:27 by analaphi         ###   ########.fr       */
+/*   Updated: 2025/11/28 15:32:10 by analaphi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	rra(t_stack **a, int flag)
 {

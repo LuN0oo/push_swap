@@ -6,7 +6,7 @@
 /*   By: analaphi <analaphi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 13:25:53 by analaphi          #+#    #+#             */
-/*   Updated: 2025/11/27 18:07:07 by analaphi         ###   ########.fr       */
+/*   Updated: 2025/12/02 16:18:09 by analaphi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ void	rr(t_stack **a, t_stack **b);
 
 /*------------------Stack_Utils--------------------*/
 
-t_stack	*create_stack(int size);
-int		is_empty(t_stack *s);
+// t_stack	*create_stack(int size);
+// int		is_empty(t_stack *s);
 
 /*--------------------Swap_Stack-------------------*/
 
@@ -61,6 +61,7 @@ void	ft_lst_addback(t_stack **s, t_stack *new);
 t_stack	*ft_add_new(int elem);
 int		ft_find_index(t_stack *s, int elem);
 void	ft_free_stack(t_stack **s);
+void	ft_add_args(char **av, t_stack **a);
 
 /*-------------------Other_Utils-------------------*/
 
@@ -69,5 +70,18 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 void	ft_error(void);
 int		ft_strlen(const char *str);
 char	**ft_split(const char *str, char c);
+int		ft_is_alpha(int c);
+int		ft_is_digit(int c);
+int		ft_is_sign(int c);
+int		ft_is_space(int c);
+void	ft_free_str(char **str);
+t_stack	*ft_parsing_quotted(char **av);
+t_stack	*ft_parsing(int ac, char **av);
+
+/*-----------------Check_For_Error-----------------*/
+
+void	ft_alpha_check(char **av);
+int		ft_check_dup(t_stack *a);
+int		ft_check_error(char **av, int i, int j);
 
 #endif
