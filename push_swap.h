@@ -6,7 +6,7 @@
 /*   By: analaphi <analaphi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 13:25:53 by analaphi          #+#    #+#             */
-/*   Updated: 2025/12/02 16:18:09 by analaphi         ###   ########.fr       */
+/*   Updated: 2025/12/08 16:51:51 by analaphi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 
 /*-----------------------Stuct-----------------------*/
 
-typedef struct stack
+typedef struct s_stack
 {
-	long			value;
-	long			index;
-	struct stack	*next;
-	struct stack	*prev;
+	int			value;
+	int			index;
+	struct s_stack	*next;
+	struct s_stack	*prev;
 }					t_stack;
 
 /*-------------------Push_Stack--------------------*/
@@ -68,7 +68,7 @@ void	ft_add_args(char **av, t_stack **a);
 int		ft_atoi(const char *str);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	ft_error(void);
-int		ft_strlen(const char *str);
+size_t	ft_strlen(const char *str);
 char	**ft_split(const char *str, char c);
 int		ft_is_alpha(int c);
 int		ft_is_digit(int c);

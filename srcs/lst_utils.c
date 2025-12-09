@@ -6,7 +6,7 @@
 /*   By: analaphi <analaphi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 11:42:37 by analaphi          #+#    #+#             */
-/*   Updated: 2025/12/02 16:20:07 by analaphi         ###   ########.fr       */
+/*   Updated: 2025/12/05 11:27:33 by analaphi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_stack	*ft_lstlast(t_stack *lst)
 {
 	if (!lst)
 		return (NULL);
-	while (lst)
+	while (lst->next)
 		lst = lst->next;
 	return (lst);
 }
@@ -38,7 +38,7 @@ void	ft_lst_addback(t_stack **s, t_stack *new)
 {
 	t_stack	*tmp;
 
-	if (!*s || !new)
+	if (!s || !new)
 		return ;
 	if (*s == NULL)
 	{

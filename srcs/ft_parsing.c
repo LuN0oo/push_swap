@@ -6,7 +6,7 @@
 /*   By: analaphi <analaphi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 13:31:44 by analaphi          #+#    #+#             */
-/*   Updated: 2025/11/28 15:37:10 by analaphi         ###   ########.fr       */
+/*   Updated: 2025/12/08 16:20:03 by analaphi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ t_stack	*ft_parsing_quotted(char **av)
 	t_stack	*a;
 	char	**tmp;
 
+	a = NULL;
 	tmp = ft_split(av[1], 32);
 	ft_add_args(tmp, &a);
 	ft_free_str(tmp);

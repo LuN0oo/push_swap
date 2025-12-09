@@ -6,7 +6,7 @@
 /*   By: analaphi <analaphi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 17:46:10 by analaphi          #+#    #+#             */
-/*   Updated: 2025/12/02 12:16:59 by analaphi         ###   ########.fr       */
+/*   Updated: 2025/12/08 16:50:56 by analaphi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,25 @@
 #include <stdio.h>
 
 
-static int	ft_count_words(char const *str, char c)
+static int	count_words(const char *str, char c)
 {
 	int	i;
-	int	count;
+	int	trigger;
 
 	i = 0;
-	count = 0;
-	while (str[i])
+	trigger = 0;
+	while (*str)
 	{
-		if ((str[i] != c) && (i == 0 || str[i - 1] == c))
-			count++;
-		i++;
+		if (*str != c && trigger == 0)
+		{
+			trigger = 1;
+			i++;
+		}
+		else if (*str == c)
+			trigger = 0;
+		str++;
 	}
-	return (count);
+	return (i);
 }
 
 static char	*word_dup(const char *str, int start, int finish)
@@ -45,16 +50,14 @@ static char	*word_dup(const char *str, int start, int finish)
 
 char	**ft_split(const char *str, char c)
 {
-	int		i;
-	int		j;
+	size_t	i;
+	size_t	j;
 	int		index;
 	char	**split;
 
-	if (!str || !c)
-		printf("caca ici");
-	split = malloc(sizeof(char *) * (ft_count_words(str, c) + 1));
+	split = malloc(sizeof(char *) * (count_words(str, c) + 1));
 	if (!str || !split)
-		return (NULL);
+		return (0);
 	i = 0;
 	j = 0;
 	index = -1;
@@ -62,9 +65,10 @@ char	**ft_split(const char *str, char c)
 	{
 		if (str[i] != c && index < 0)
 			index = i;
-		else if ((str[i] == c || i == ft_strlen(str)) || index >= 0)
+		else if ((str[i] == c || i == ft_strlen(str)) && index >= 0)
 		{
-			split[j++] = word_dup(str, index, i);
+			split[j] = word_dup(str, index, i);
+			j++;
 			index = -1;
 		}
 		i++;
