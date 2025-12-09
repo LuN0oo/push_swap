@@ -6,7 +6,7 @@
 /*   By: analaphi <analaphi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 13:25:53 by analaphi          #+#    #+#             */
-/*   Updated: 2025/12/08 16:51:51 by analaphi         ###   ########.fr       */
+/*   Updated: 2025/12/09 14:44:31 by analaphi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ t_stack	*ft_add_new(int elem);
 int		ft_find_index(t_stack *s, int elem);
 void	ft_free_stack(t_stack **s);
 void	ft_add_args(char **av, t_stack **a);
+void	ft_add_args_quotted(char **av, t_stack **a);
 
 /*-------------------Other_Utils-------------------*/
 
