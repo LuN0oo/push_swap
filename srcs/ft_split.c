@@ -6,13 +6,11 @@
 /*   By: analaphi <analaphi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 17:46:10 by analaphi          #+#    #+#             */
-/*   Updated: 2025/12/08 16:50:56 by analaphi         ###   ########.fr       */
+/*   Updated: 2025/12/10 12:16:27 by analaphi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-#include <stdio.h>
-
 
 static int	count_words(const char *str, char c)
 {

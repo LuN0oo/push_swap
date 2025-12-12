@@ -6,7 +6,7 @@
 /*   By: analaphi <analaphi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 10:43:19 by analaphi          #+#    #+#             */
-/*   Updated: 2025/11/28 15:32:56 by analaphi         ###   ########.fr       */
+/*   Updated: 2025/12/10 12:37:40 by analaphi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_is_alpha(int c)
 {
 	if ((c >= 33 && c <= 42) || (c >= 58 && c <= 126)
 		|| (c == 44) || (c == 46) || (c == 47))
-		return (1);
+		ft_error();
 	return (0);
 }
 
@@ -37,4 +37,12 @@ void	ft_alpha_check(char **av)
 		}
 		i++;
 	}
+}
+
+int		ft_check_args(char **av)
+{
+	ft_alpha_check(av);
+	if (!ft_check_error(av, 1, 0))
+		return (1);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: analaphi <analaphi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 12:12:52 by analaphi          #+#    #+#             */
-/*   Updated: 2025/11/28 15:31:25 by analaphi         ###   ########.fr       */
+/*   Updated: 2025/12/10 12:41:58 by analaphi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	ft_check_error(char **av, int i, int j)
 			{
 				j++;
 				if (!ft_is_digit(av[i][j]))
-					return (1);
+					ft_error();
 			}
 			else if (ft_is_digit(av[i][j]))
 			{
@@ -52,7 +52,7 @@ int	ft_check_error(char **av, int i, int j)
 				if (av[i][j] == '\0')
 					break ;
 				if (!ft_is_digit(av[i][j]) && !ft_is_space(av[i][j]))
-					return (1);
+					ft_error();
 			}
 			j++;
 		}

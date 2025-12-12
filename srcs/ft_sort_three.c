@@ -1,41 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_stack.c                                       :+:      :+:    :+:   */
+/*   ft_sort_three.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: analaphi <analaphi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/24 15:18:38 by analaphi          #+#    #+#             */
-/*   Updated: 2025/12/12 14:18:39 by analaphi         ###   ########.fr       */
+/*   Created: 2025/12/12 15:34:34 by analaphi          #+#    #+#             */
+/*   Updated: 2025/12/12 16:24:43 by analaphi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	pa(t_stack **a, t_stack **b, int flag)
+void ft_sort_three(t_stack **a)
 {
-	t_stack	*tmp;
-
-	if (!*b)
-		return ;
-	tmp = *a;
-	*a = *b;
-	*b = (*b)->next;
-	(*a)->next = tmp;
-	if (flag == 1)
-		write(1, "pa\n", 3);
-}
-
-void	pb(t_stack **a, t_stack **b, int flag)
-{
-	t_stack	*tmp;
-
-	if (!*a)
-		return ;
-	tmp = *b;
-	*b = *a;
-	*a = (*a)->next;
-	(*b)->next = tmp;
-	if (flag == 1)
-		write(1, "pb\n", 3);
+	if (ft_min(*a) == (*a)->value)
+	{
+		rra(a, 1);
+		sa(a, 1);
+	}
+	else if (ft_max(*a) == (*a)->value)
+	{
+		ra(a, 1);
+		if (!ft_is_sorted(*a))
+			sa(a, 1);
+	}
+	else 
+	{
+		if (ft_find_index(*a, ft_max(*a)) == 1)
+			rra(a, 1);
+		else 
+			sa(a, 1);
+	}
 }

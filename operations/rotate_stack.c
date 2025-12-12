@@ -6,7 +6,7 @@
 /*   By: analaphi <analaphi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 09:33:04 by analaphi          #+#    #+#             */
-/*   Updated: 2025/11/28 15:32:05 by analaphi         ###   ########.fr       */
+/*   Updated: 2025/12/12 15:54:39 by analaphi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ra(t_stack **a, int flag)
 	t_stack	*tmp;
 
 	if (!*a || !(*a)->next)
-		return (NULL);
+		return ;
 	tmp = *a;
 	*a = ft_lstlast(*a);
 	(*a)->next = tmp;
@@ -32,7 +32,7 @@ void	rb(t_stack **b, int flag)
 	t_stack	*tmp;
 
 	if (!*b || !(*b)->next)
-		return (NULL);
+		return ;
 	tmp = *b;
 	*b = ft_lstlast(*b);
 	(*b)->next = tmp;
@@ -45,7 +45,7 @@ void	rb(t_stack **b, int flag)
 void	rr(t_stack **a, t_stack **b)
 {
 	if (!*a || (*a)->next || !*b || !(*b)->next)
-		return (NULL);
+		return ;
 	ra(a, 0);
 	rb(b, 0);
 	write(1, "rr\n", 3);

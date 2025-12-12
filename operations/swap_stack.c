@@ -6,7 +6,7 @@
 /*   By: analaphi <analaphi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 10:55:08 by analaphi          #+#    #+#             */
-/*   Updated: 2025/11/28 15:32:02 by analaphi         ###   ########.fr       */
+/*   Updated: 2025/12/12 15:54:50 by analaphi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	sa(t_stack **a, int flag)
 	t_stack	*tmp;
 
 	if (!*a || !((*a)->next))
-		return (NULL);
+		return ;
 	tmp = *a;
 	*a = (*a)->next;
 	tmp->next = (*a)->next;
@@ -31,7 +31,7 @@ void	sb(t_stack **b, int flag)
 	t_stack	*tmp;
 
 	if (!*b || !((*b)->next))
-		return (NULL);
+		return ;
 	tmp = *b;
 	*b = (*b)->next;
 	tmp->next = (*b)->next;
@@ -43,7 +43,7 @@ void	sb(t_stack **b, int flag)
 void	ss(t_stack **a, t_stack **b)
 {
 	if (!*a || !(*a)->next || !*b || !(*b)->next)
-		return (NULL);
+		return ;
 	sa(a, 0);
 	sb(b, 0);
 	write(1, "ss\n", 3);

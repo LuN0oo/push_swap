@@ -6,7 +6,7 @@
 /*   By: analaphi <analaphi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 12:04:10 by analaphi          #+#    #+#             */
-/*   Updated: 2025/11/28 15:31:01 by analaphi         ###   ########.fr       */
+/*   Updated: 2025/12/09 16:02:05 by analaphi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_check_dup(t_stack *a)
 		while (tmp)
 		{
 			if (a->value == tmp->value)
-				return (1);
+				ft_error();
 			tmp = tmp->next;
 		}
 		a = a->next;

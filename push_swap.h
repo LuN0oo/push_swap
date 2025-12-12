@@ -6,7 +6,7 @@
 /*   By: analaphi <analaphi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 13:25:53 by analaphi          #+#    #+#             */
-/*   Updated: 2025/12/09 14:44:31 by analaphi         ###   ########.fr       */
+/*   Updated: 2025/12/12 15:56:03 by analaphi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 
 typedef struct s_stack
 {
-	int			value;
-	int			index;
+	int				value;
+	int				index;
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }					t_stack;
@@ -44,14 +44,11 @@ void	rr(t_stack **a, t_stack **b);
 
 /*------------------Stack_Utils--------------------*/
 
-// t_stack	*create_stack(int size);
-// int		is_empty(t_stack *s);
-
 /*--------------------Swap_Stack-------------------*/
 
-int		sa(t_stack **a, int flag);
+void	sa(t_stack **a, int flag);
 void	sb(t_stack **b, int flag);
-int		ss(t_stack **a, t_stack **b);
+void	ss(t_stack **a, t_stack **b);
 
 /*--------------------Lst_Utils--------------------*/
 
@@ -63,11 +60,13 @@ int		ft_find_index(t_stack *s, int elem);
 void	ft_free_stack(t_stack **s);
 void	ft_add_args(char **av, t_stack **a);
 void	ft_add_args_quotted(char **av, t_stack **a);
+int		ft_min(t_stack *a);
+int		ft_max(t_stack *a);
+int		ft_is_sorted(t_stack *a);
 
 /*-------------------Other_Utils-------------------*/
 
 int		ft_atoi(const char *str);
-void	*ft_memmove(void *dest, const void *src, size_t n);
 void	ft_error(void);
 size_t	ft_strlen(const char *str);
 char	**ft_split(const char *str, char c);
@@ -84,5 +83,10 @@ t_stack	*ft_parsing(int ac, char **av);
 void	ft_alpha_check(char **av);
 int		ft_check_dup(t_stack *a);
 int		ft_check_error(char **av, int i, int j);
+int		ft_check_args(char **av);
+
+/*---------------------Sorting---------------------*/
+
+void ft_sort_three(t_stack **a);
 
 #endif
